@@ -3,6 +3,6 @@ package org.TBMA;
 public class Main {
     public static void main(String[] args) {
         Application app = new Application();
-        app.application();
+        app.printMenu();
     }
 }
