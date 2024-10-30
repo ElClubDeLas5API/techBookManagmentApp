@@ -87,7 +87,6 @@ public class Application {
         }
     }
 
-
     private Book getBookData () {
         Scanner scanner = getScanner();
         System.out.println("\nIngrese un titulo:");
@@ -97,11 +96,29 @@ public class Application {
         System.out.println("\nIngrese un ISBN:");
         String getISBN = scanner.nextLine();
 
+        if(getTitulo.isEmpty() || getAutor.isEmpty() || getISBN.isEmpty()) {
+            System.out.println("Todos los campos son obligatorios. Por favor, intente nuevamente.");
+        }
+        if(!getISBN.matches("^[a-zA-Z][0-9]{3}$")){
+            System.out.println("Formato incorrecto, debe contener una letra seguida de tres números");
+        }
+
         return new Book (getTitulo,getAutor,getISBN);
+    }
+
+    private void isBookInList() {
+        for (Book book : repoBooks1) {
+            if(getISBN.equal(ISBN)) {
+                return book[-1];
+            }
+        }
     }
 
     private void addBook (){
         Book newBook =  getBookData();
         repoBooks1.add(newBook);
+        System.out.println("Libro añadido con éxito.");
+
     }
+
 }
