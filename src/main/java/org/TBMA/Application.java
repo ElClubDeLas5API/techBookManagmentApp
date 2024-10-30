@@ -12,14 +12,25 @@ public class Application {
         this.repoBooks1.add(new Book("A123", "Effective Java", "Joshua Bloch"));
     }
 
+    String[] menu = {"\n1.Ver todos los libros ", "2. Añadir libro", "3. Eliminar libro", "4. Cambiar repositorio", "5. Salir"};
 
     public void printMenu() {
 
-        Scanner scanner = new Scanner(System.in);
-        String[] menu = {"1.Ver todos los libros ", "2. Añadir libro", "3. Eliminar libro", "4. Cambiar repositorio", "5. Salir"};
+        Scanner scanner = getScanner();
+
 
         byte option = 0;
 
+        menuFilter(option, scanner);
+
+    }
+
+    private static Scanner getScanner() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner;
+    }
+
+    private void menuFilter(byte option, Scanner scanner) {
         while (option != 5) {
             for (String item : menu) {
                 System.out.println(item);
@@ -43,19 +54,26 @@ public class Application {
             }
 
             System.out.println("\nHa elegido: " + menu[option - 1]);
+            System.out.println("------------------------------------------");
 
             this.optionSelector(option);
 
-            System.out.println("------------------------------------------");
 
         }
-
     }
 
     private void optionSelector(byte option) {
-        if(option == 1){
-            this.printList();
+
+        switch (option){
+            case 1:
+                this.printList();
+                break;
+            case 2:
+                this.getBookData();// funcion que pida datos guarde datos y devuelva new book
+                this.addBook();
+                break;
         }
+
     }
 
     private void printList () {
@@ -68,5 +86,24 @@ public class Application {
             System.out.println("    ··········       ");
             System.out.println(book.toString());
         }
+    }
+
+
+    private Book getBookData () {
+        Scanner scanner = getScanner();
+        System.out.println("\nIngrese un titulo:");
+        String getTitulo = scanner.nextLine();
+        System.out.println("\nIngrese un autor:");
+        String getAutor = scanner.nextLine();
+        System.out.println("\nIngrese un ISBN:");
+        String getISBN = scanner.nextLine();
+
+        return new Book (getTitulo,getAutor,getISBN);
+    }
+
+    private void addBook (){
+
+
+//        repoBooks1.add();
     }
 }
