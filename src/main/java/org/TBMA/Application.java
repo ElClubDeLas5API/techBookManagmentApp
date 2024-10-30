@@ -3,11 +3,12 @@ package org.TBMA;
 import java.util.Scanner;
 
 public class Application {
-    public static void application() {
-        Book[] repoBooks1 = {new Book("A123", "Effective Java", "Joshua Bloch")};
+
+    Book[] repoBooks1 = {new Book("A123", "Effective Java", "Joshua Bloch")};
+    public static void printMenu() {
+
         Scanner scanner = new Scanner(System.in);
         String[] menu = {"1.Ver todos los libros ", "2. Añadir libro", "3. Eliminar libro", "4. Cambiar repositorio", "5. Salir"};
-
 
         byte option = 0;
 
@@ -37,5 +38,18 @@ public class Application {
             }
         }
 
+    }
+
+
+    public static void printList(Book[] arrayList) {
+
+        if (arrayList.length == 0) {
+            System.out.println("No hay libros guardados");
+            return;
+        }
+        System.out.println("\nLista de Libros: ");
+        for (Book item : arrayList) {
+            item.infoBook();
+        }
     }
 }
