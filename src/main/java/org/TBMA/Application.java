@@ -4,14 +4,10 @@ import java.util.Scanner;
 
 public class Application {
     public static void application() {
+        Book[] repoBooks1 = {new Book("A123", "Effective Java", "Joshua Bloch")};
         Scanner scanner = new Scanner(System.in);
-        String[] menu = {
-                "1. Añadir libro",
-                "2. Ver todos los libros",
-                "3. Eliminar libro",
-                "4. Cambiar repositorio",
-                "5. Salir"
-        };
+        String[] menu = {"1.Ver todos los libros ", "2. Añadir libro", "3. Eliminar libro", "4. Cambiar repositorio", "5. Salir"};
+
 
         byte option = 0;
 
@@ -19,7 +15,7 @@ public class Application {
             for (String item : menu) {
                 System.out.println(item);
             }
-            System.out.println("Seleccione una opción:");
+            System.out.println("\nSeleccione una opción:");
 
             String input = scanner.nextLine();
 
@@ -35,7 +31,11 @@ public class Application {
                 continue;
             }
 
-            System.out.println("Ha elegido: " + menu[option - 1]);
+            System.out.println("\nHa elegido: " + menu[option - 1]);
+            if (option == 1) {
+                Book.printList(repoBooks1);
+            }
         }
+
     }
 }
