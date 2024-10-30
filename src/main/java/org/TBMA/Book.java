@@ -13,8 +13,8 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Titulo='" + Titulo + '\n' +
-                ", Autor='" + Autor + '\n' +
-                ", ISBN='" + ISBN + '\n';
+        return "Titulo: " + Titulo + '\n' +
+                "Autor: " + Autor + '\n' +
+                "ISBN: " + ISBN + '\n';
     }
 }
