@@ -69,7 +69,6 @@ public class Application {
                 this.printList();
                 break;
             case 2:
-                this.getBookData();// funcion que pida datos guarde datos y devuelva new book
                 this.addBook();
                 break;
         }
@@ -102,8 +101,7 @@ public class Application {
     }
 
     private void addBook (){
-
-
-//        repoBooks1.add();
+        Book newBook =  getBookData();
+        repoBooks1.add(newBook);
     }
 }
