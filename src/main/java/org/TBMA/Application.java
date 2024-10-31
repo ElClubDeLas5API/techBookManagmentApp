@@ -1,15 +1,16 @@
 package org.TBMA;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Application {
 
-    private ArrayList <Book>  repoBooks1 = new ArrayList<>();
+    private ArrayList<Book> repoBooks1 = new ArrayList<>();
 
     public Application() {
-        this.repoBooks1.add(new Book("A123", "Effective Java", "Joshua Bloch"));
-        this.repoBooks1.add(new Book("A123", "Effective Java", "Joshua Bloch"));
+        this.repoBooks1.add(new Book("Effective Java", "Joshua Bloch", "A123"));
+        this.repoBooks1.add(new Book("Effective Java", "Joshua Bloch", "A123"));
     }
 
     String[] menu = {"\n1.Ver todos los libros ", "2. Añadir libro", "3. Eliminar libro", "4. Cambiar repositorio", "5. Salir"};
@@ -64,7 +65,7 @@ public class Application {
 
     private void optionSelector(byte option) {
 
-        switch (option){
+        switch (option) {
             case 1:
                 this.printList();
                 break;
@@ -75,7 +76,7 @@ public class Application {
 
     }
 
-    private void printList () {
+    private void printList() {
         if (repoBooks1.isEmpty()) {
             System.out.println("No hay libros guardados");
             return;
@@ -87,35 +88,51 @@ public class Application {
         }
     }
 
-    private Book getBookData () {
+    private Book getBookData() {
         Scanner scanner = getScanner();
         System.out.println("\nIngrese un titulo:");
-        String getTitulo = scanner.nextLine();
+        String userTitulo = scanner.nextLine();
         System.out.println("\nIngrese un autor:");
-        String getAutor = scanner.nextLine();
+        String userAutor = scanner.nextLine();
         System.out.println("\nIngrese un ISBN:");
-        String getISBN = scanner.nextLine();
+        String userISBN = scanner.nextLine();
 
-        if(getTitulo.isEmpty() || getAutor.isEmpty() || getISBN.isEmpty()) {
+        if (userTitulo.isEmpty() || userAutor.isEmpty() || userISBN.isEmpty()) {
             System.out.println("Todos los campos son obligatorios. Por favor, intente nuevamente.");
         }
-        if(!getISBN.matches("^[a-zA-Z][0-9]{3}$")){
+        if (!userISBN.matches("^[a-zA-Z][0-9]{3}$")) {
             System.out.println("Formato incorrecto, debe contener una letra seguida de tres números");
+            userISBN = "";
         }
 
-        return new Book (getTitulo,getAutor,getISBN);
+        return new Book(userTitulo, userAutor, userISBN);
     }
 
-    private void isBookInList() {
+    private int isBookInList(String uISBN) {
         for (Book book : repoBooks1) {
-            if(getISBN.equal(ISBN)) {
-                return book[-1];
+            String getterIsbn = book.getISBN();
+            if ((Objects.equals(uISBN, getterIsbn))) {
+                return repoBooks1.indexOf(book);
+
             }
         }
+        return -1;
     }
 
-    private void addBook (){
-        Book newBook =  getBookData();
+    private void addBook() {
+        Book newBook = getBookData();
+        int result = isBookInList(newBook.getISBN());
+        String isbnNewBook = newBook.getISBN();
+
+        if (isbnNewBook.isEmpty()) {
+            return;
+        }
+
+        if (result >= 0) {
+            System.out.println("El libro ya existe en la lista.");
+            return;
+        }
+
         repoBooks1.add(newBook);
         System.out.println("Libro añadido con éxito.");
 

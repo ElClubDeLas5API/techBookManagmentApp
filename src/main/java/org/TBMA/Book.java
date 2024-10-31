@@ -1,6 +1,10 @@
 package org.TBMA;
 
 public class Book {
+    public String getISBN() {
+        return ISBN;
+    }
+
     private String ISBN;
     private String Titulo;
     private String Autor;
