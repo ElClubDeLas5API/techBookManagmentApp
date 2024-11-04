@@ -99,5 +99,27 @@ Ha elegido:
 - **Mensajes informativos**: 
   - Informa al usuario sobre el éxito de las operaciones realizadas y muestra mensajes claros en caso de errores.
 
+## Contribución
+
+
+
+## Autores y Agradecimientos
+
+Paula Calvo ![https://www.linkedin.com/in/paulacalvogarcia2001/]( icons8-linkedin-48.png "Logo linkedIn")
+Carla Sanchez ![https://www.linkedin.com/in/carla-sanchez24]( icons8-linkedin-48.png "Logo linkedIn")
+
+Miguel Reyes ![https://www.linkedin.com/in/miguelreyesvasquez/]( icons8-linkedin-48.png "Logo linkedIn")
+Luis Aranguren ![https://github.com/luisarangurnn]( icons8-linkedin-48.png "Logo linkedIn")
+
+Aron Cosmo  ![]( icons8-linkedin-48.png "Logo linkedIn")
+
+
+
+
+## Licencia
+
+
+
+## Contacto
 
 
