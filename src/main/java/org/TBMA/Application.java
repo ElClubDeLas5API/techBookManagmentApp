@@ -72,6 +72,9 @@ public class Application {
             case 2:
                 this.addBook();
                 break;
+            case 3:
+                this.deleteBook();
+                break;
         }
 
     }
@@ -88,24 +91,45 @@ public class Application {
         }
     }
 
-    private Book getBookData() {
+    private Book getBookData(int caseIndex) {
         Scanner scanner = getScanner();
-        System.out.println("\nIngrese un titulo:");
-        String userTitulo = scanner.nextLine();
-        System.out.println("\nIngrese un autor:");
-        String userAutor = scanner.nextLine();
-        System.out.println("\nIngrese un ISBN:");
-        String userISBN = scanner.nextLine();
+        String userTitulo;
+        String userAutor ;
+        String userISBN ;
+        switch (caseIndex) {
+            case 2:
+                System.out.println("\nIngrese un titulo:");
+                userTitulo = scanner.nextLine();
+                System.out.println("\nIngrese un autor:");
+                userAutor = scanner.nextLine();
+                System.out.println("\nIngrese un ISBN:");
+                userISBN = scanner.nextLine();
 
-        if (userTitulo.isEmpty() || userAutor.isEmpty() || userISBN.isEmpty()) {
-            System.out.println("Todos los campos son obligatorios. Por favor, intente nuevamente.");
-        }
-        if (!userISBN.matches("^[a-zA-Z][0-9]{3}$")) {
-            System.out.println("Formato incorrecto, debe contener una letra seguida de tres números");
-            userISBN = "";
+                if (userTitulo.isEmpty() || userAutor.isEmpty() || userISBN.isEmpty()) {
+                    System.out.println("Todos los campos son obligatorios. Por favor, intente nuevamente.");
+                }
+                if (!userISBN.matches("^[a-zA-Z][0-9]{3}$")) {
+                    System.out.println("Formato incorrecto, debe contener una letra seguida de tres números");
+                    userISBN = "";
+                }
+
+                return new Book(userTitulo, userAutor, userISBN);
+            case 3:
+                System.out.println("\nIngrese un ISBN:");
+                userISBN = scanner.nextLine();
+
+                if (userISBN.isEmpty()) {
+                    System.out.println("Campo obligatorio. Por favor, intente nuevamente.");
+                }
+                if (!userISBN.matches("^[a-zA-Z][0-9]{3}$")) {
+                    System.out.println("Formato incorrecto, debe contener una letra seguida de tres números");
+                    userISBN = "";
+                }
+
+                return new Book("","",userISBN);
         }
 
-        return new Book(userTitulo, userAutor, userISBN);
+        return new Book("","","");
     }
 
     private int isBookInList(String uISBN) {
@@ -120,15 +144,15 @@ public class Application {
     }
 
     private void addBook() {
-        Book newBook = getBookData();
-        int result = isBookInList(newBook.getISBN());
+        Book newBook = getBookData(2);
+        int inListIndex = isBookInList(newBook.getISBN());
         String isbnNewBook = newBook.getISBN();
 
         if (isbnNewBook.isEmpty()) {
             return;
         }
 
-        if (result >= 0) {
+        if (inListIndex >= 0) {
             System.out.println("El libro ya existe en la lista.");
             return;
         }
@@ -136,6 +160,20 @@ public class Application {
         repoBooks1.add(newBook);
         System.out.println("Libro añadido con éxito.");
 
+    }
+
+    private void deleteBook(){
+        Book deleteISBN = getBookData(3);
+        int index = isBookInList(deleteISBN.getISBN());
+        String isbnDeleteBook = deleteISBN.getISBN();
+
+        if (index == -1) {
+            System.out.println("El ISBN introducido no existe.");
+            return;
+        }
+
+         repoBooks1.remove(index);
+        System.out.println("Libro eliminado con éxito.");
     }
 
 }
