@@ -2,7 +2,7 @@ package org.TBMA;
 
 public class Main {
     public static void main(String[] args) {
-        Application app = new Application();
+        BookConsoleView app = new BookConsoleView();
         app.printMenu();
     }
 }
