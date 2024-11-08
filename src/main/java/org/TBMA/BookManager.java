@@ -4,38 +4,31 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class BookManager {
-    private ArrayList<Book> getRepoBooks1 = new ArrayList<Book>();
+    private ArrayList<Book> getRepoBooks1 = new ArrayList<>();
 
     public BookManager() {
     }
 
-    public void addBook(BookConsoleView application) {
-        Book newBook = application.getBookData(2);
+    public void addBook(Book newBook) {
         int inListIndex = this.isBookInList(newBook.getISBN());
         String isbnNewBook = newBook.getISBN();
 
-        if (inListIndex >= 0) {
-            System.out.println("El libro ya existe en la lista.");
-            return;
+        if (inListIndex >= 0 && isbnNewBook.isEmpty()) {
+            throw new IllegalArgumentException("El libro ya existe en la lista.");
         }
 
         getRepoBooks1.add(newBook);
-        System.out.println("Libro añadido con éxito.");
 
     }
 
-    public void deleteBook(BookConsoleView application) {
-        Book deleteISBN = application.getBookData(3);
-        int index = this.isBookInList(deleteISBN.getISBN());
-        String isbnDeleteBook = deleteISBN.getISBN();
+    public void deleteBook(String isbnDeleteBook) {
+        int index = this.isBookInList(isbnDeleteBook);
 
         if (index == -1) {
-            System.out.println("El ISBN introducido no existe.");
-            return;
+            throw new IllegalArgumentException("El ISBN introducido no existe.");
         }
 
         getRepoBooks1.remove(index);
-        System.out.println("Libro eliminado con éxito.");
     }
 
     public int isBookInList(String uISBN) {

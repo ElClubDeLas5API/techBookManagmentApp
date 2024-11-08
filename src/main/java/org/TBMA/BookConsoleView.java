@@ -20,7 +20,7 @@ public class BookConsoleView {
         return scanner;
     }
 
-    private void menuFilter(byte option, Scanner scanner) {
+    private void menuFilter(byte option, Scanner scanner)  {
         while (option != 5) {
             for (String item : menu) {
                 System.out.println(item);
@@ -50,17 +50,17 @@ public class BookConsoleView {
         }
     }
 
-    private void optionSelector(byte option) {
-
+    private void optionSelector(byte option)  {
+        Scanner scanner = getScanner();
         switch (option) {
             case 1:
                 this.printList();
                 break;
             case 2:
-                this.bookManager.addBook(this);
+                this.printAddBookMenu(scanner);
                 break;
             case 3:
-                this.bookManager.deleteBook(this);
+                this.printDeleteBookMenu(scanner);
                 break;
         }
     }
@@ -77,18 +77,8 @@ public class BookConsoleView {
         }
     }
 
-    Book getBookData(int caseIndex) {
-        Scanner scanner = getScanner();
-        switch (caseIndex) {
-            case 2:
-                return printAddBookMenu(scanner);
-            case 3:
-                return printDeleteBookMenu(scanner);
-        }
-        return new Book("", "", "");
-    }
 
-    private static Book printDeleteBookMenu(Scanner scanner) {
+    private void printDeleteBookMenu(Scanner scanner) {
         String userISBN;
         System.out.println("\nIngrese un ISBN:");
         userISBN = scanner.nextLine();
@@ -100,11 +90,16 @@ public class BookConsoleView {
             System.out.println("Formato incorrecto, debe contener una letra seguida de tres números");
             userISBN = "";
         }
+        try {
+            bookManager.deleteBook((userISBN));
+            System.out.println("Libro eliminado con éxito.");
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
 
-        return new Book("", "", userISBN);
     }
 
-    private static Book printAddBookMenu(Scanner scanner) {
+    private void printAddBookMenu(Scanner scanner) {
         String userISBN;
         String userAutor;
         String userTitulo;
@@ -118,16 +113,21 @@ public class BookConsoleView {
 
         if (userTitulo.isEmpty() || userAutor.isEmpty() || userISBN.isEmpty()) {
             System.out.println("Todos los campos son obligatorios. Por favor, intente nuevamente.");
-            return new Book("", "", userISBN);
-
+            return;
         }
         if (!userISBN.matches("^[a-zA-Z][0-9]{3}$")) {
             System.out.println("Formato incorrecto, debe contener una letra seguida de tres números");
-            return null;
+            return;
+        }
+        try {
+            bookManager.addBook(new Book(userTitulo, userAutor, userISBN));
+            System.out.println("Libro añadido con éxito.");
 
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
 
-        return new Book(userTitulo, userAutor, userISBN);
+
     }
 
 }
