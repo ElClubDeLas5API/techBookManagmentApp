@@ -1,24 +1,32 @@
 package org.TBMA;
 
 public class Book {
-    public String getISBN() {
-        return ISBN;
-    }
 
-    private String ISBN;
-    private String Titulo;
-    private String Autor;
+    private String isbn;
+    private String title;
+    private String author;
 
     public Book(String titulo, String autor, String ISBN) {
-        this.Titulo = titulo;
-        this.Autor = autor;
-        this.ISBN = ISBN;
+        this.title = titulo;
+        this.author = autor;
+        this.isbn = ISBN;
     }
 
     @Override
     public String toString() {
-        return "Titulo: " + Titulo + '\n' +
-                "Autor: " + Autor + '\n' +
-                "ISBN: " + ISBN;
+        return "Titulo: " + title + '\n' +
+                "Autor: " + author + '\n' +
+                "ISBN: " + isbn;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public Object getAuthor() {
+        return author;
     }
 }

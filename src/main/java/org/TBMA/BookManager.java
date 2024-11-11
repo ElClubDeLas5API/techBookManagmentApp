@@ -10,8 +10,8 @@ public class BookManager {
     }
 
     public void addBook(Book newBook) {
-        int inListIndex = this.isBookInList(newBook.getISBN());
-        String isbnNewBook = newBook.getISBN();
+        int inListIndex = this.isBookInList(newBook.getIsbn());
+        String isbnNewBook = newBook.getIsbn();
 
         if (inListIndex >= 0 && isbnNewBook.isEmpty()) {
             throw new IllegalArgumentException("El libro ya existe en la lista.");
@@ -33,7 +33,7 @@ public class BookManager {
 
     public int isBookInList(String uISBN) {
         for (Book book : getRepoBooks1) {
-            String getterIsbn = book.getISBN();
+            String getterIsbn = book.getIsbn();
             if ((Objects.equals(uISBN, getterIsbn))) {
                 return getRepoBooks1.indexOf(book);
             }
