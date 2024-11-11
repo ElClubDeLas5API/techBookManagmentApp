@@ -1,9 +1,6 @@
 package org.TBMA;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,5 +43,42 @@ public class MySQLBookRepository {
 
         }
         return bookList;
+    }
+
+    public Book findByIsbn() throws SQLException {
+        String sql = "SELECT * FROM books WHERE isbn = ?";
+        Book book = null;
+
+
+        try{
+            Connection connection = MySQLConnection.getConnection();
+
+            PreparedStatement statement1= connection.prepareStatement(sql);
+            statement1.setString(1,"A123");
+
+            ResultSet res = statement1.executeQuery(sql);
+
+
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return book;
+
+
+    }
+    public void deleteByIsbn() throws SQLException {
+        String sql = "DELETE * FROM books WHERE isbn = ?";
+
+        try{
+            Connection connection = MySQLConnection.getConnection();
+            Statement statement = connection.createStatement();
+
+
+            int res = statement.executeUpdate(sql);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }
