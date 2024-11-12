@@ -6,9 +6,9 @@ public class Book {
     private String title;
     private String author;
 
-    public Book(String titulo, String autor, String ISBN) {
+    public Book(String titulo, String author, String ISBN) {
         this.title = titulo;
-        this.author = autor;
+        this.author = author;
         this.isbn = ISBN;
     }
 
