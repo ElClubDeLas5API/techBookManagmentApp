@@ -1,7 +1,6 @@
 package org.TBMA;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -78,23 +77,21 @@ public class MySQLBookRepository {
 
 
     }
-    public Optional deleteByIsbn(String userISBN) throws SQLException{
-        String sql = "DELETE * FROM books WHERE isbn = '%s'" .formatted(userISBN);
+    public void deleteByIsbn(String userISBN) throws SQLException{
+        String sql = "DELETE FROM books WHERE isbn = '%s'" .formatted(userISBN);
         Book book = null;
 
         try{
             Connection connection = MySQLConnection.getConnection();
             Statement statement = connection.createStatement();
             statement.executeUpdate(sql);
-            ResultSet res = statement.executeQuery(sql);
-            if (res.next()){
-                return Optional.of(book);
-            }
+          //  ResultSet res = statement.executeQuery(sql);
+
             statement.close();
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        return Optional.empty();
+        return;
     }
 }
