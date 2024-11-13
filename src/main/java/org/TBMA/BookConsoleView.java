@@ -1,5 +1,6 @@
 package org.TBMA;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class BookConsoleView {
@@ -8,7 +9,7 @@ public class BookConsoleView {
 
     String[] menu = {"\n1.Ver todos los libros ", "2. Añadir libro", "3. Eliminar libro", "4. Cambiar repositorio", "5. Salir"};
 
-    public void printMenu() {
+    public void printMenu() throws SQLException {
 
         Scanner scanner = getScanner();
         byte option = 0;
@@ -20,7 +21,7 @@ public class BookConsoleView {
         return scanner;
     }
 
-    private void menuFilter(byte option, Scanner scanner)  {
+    private void menuFilter(byte option, Scanner scanner) throws SQLException {
         while (option != 5) {
             for (String item : menu) {
                 System.out.println(item);
@@ -50,7 +51,7 @@ public class BookConsoleView {
         }
     }
 
-    private void optionSelector(byte option)  {
+    private void optionSelector(byte option) throws SQLException {
         Scanner scanner = getScanner();
         switch (option) {
             case 1:
@@ -62,16 +63,22 @@ public class BookConsoleView {
             case 3:
                 this.printDeleteBookMenu(scanner);
                 break;
+            case 4:
+                // ?
+                break;
+            case 5:
+                System.out.println("Saliendo...");
+                break;
         }
     }
 
-    private void printList() {
-        if (bookManager.getGetRepoBooks1().isEmpty()) {
+    private void printList() throws SQLException {
+        if (bookManager.getAllBooks().isEmpty()) {
             System.out.println("No hay libros guardados");
             return;
         }
         System.out.println("\nLista de Libros: ");
-        for (Book book : bookManager.getGetRepoBooks1()) {
+        for (Book book : bookManager.getAllBooks()) {
             System.out.println("    ··········       ");
             System.out.println(book.toString());
         }
@@ -91,7 +98,7 @@ public class BookConsoleView {
             userISBN = "";
         }
         try {
-            bookManager.deleteBook((userISBN));
+            bookManager.deleteByIsbn((userISBN));
             System.out.println("Libro eliminado con éxito.");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -120,7 +127,7 @@ public class BookConsoleView {
             return;
         }
         try {
-            bookManager.addBook(new Book(userTitulo, userAutor, userISBN));
+            bookManager.addBook(userTitulo, userAutor, userISBN);
             System.out.println("Libro añadido con éxito.");
 
         } catch (Exception ex) {

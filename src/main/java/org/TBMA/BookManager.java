@@ -1,47 +1,31 @@
 package org.TBMA;
 
-import java.util.ArrayList;
-import java.util.Objects;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Optional;
 
 public class BookManager {
-    private ArrayList<Book> getRepoBooks1 = new ArrayList<>();
+    private BookRepository bookRepository = new MySQLBookRepository();
 
-    public BookManager() {
-    }
 
-    public void addBook(Book newBook) {
-        int inListIndex = this.isBookInList(newBook.getIsbn());
-        String isbnNewBook = newBook.getIsbn();
 
-        if (inListIndex >= 0 && isbnNewBook.isEmpty()) {
-            throw new IllegalArgumentException("El libro ya existe en la lista.");
+    public void addBook(String isbn, String title, String author) throws SQLException {
+        Optional<Book> optionalBook = bookRepository.findByIsbn(isbn);
+
+        if (optionalBook.isPresent()) {
+            throw new IllegalArgumentException("Este libro ya existe.");
         }
 
-        getRepoBooks1.add(newBook);
-
+        Book newBook = new Book(isbn, title, author);
+        bookRepository.save(newBook);
     }
 
-    public void deleteBook(String isbnDeleteBook) {
-        int index = this.isBookInList(isbnDeleteBook);
-
-        if (index == -1) {
-            throw new IllegalArgumentException("El ISBN introducido no existe.");
-        }
-
-        getRepoBooks1.remove(index);
+    public void deleteByIsbn(String isbnToDelete) throws SQLException {
+        bookRepository.deleteByIsbn(isbnToDelete);
     }
 
-    public int isBookInList(String uISBN) {
-        for (Book book : getRepoBooks1) {
-            String getterIsbn = book.getIsbn();
-            if ((Objects.equals(uISBN, getterIsbn))) {
-                return getRepoBooks1.indexOf(book);
-            }
-        }
-        return -1;
-    }
-
-    public ArrayList<Book> getGetRepoBooks1() {
-        return this.getRepoBooks1;
+    public List<Book> getAllBooks() throws SQLException {
+        return bookRepository.findAll();
     }
 }
+
