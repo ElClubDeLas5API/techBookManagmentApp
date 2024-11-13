@@ -29,7 +29,7 @@ La aplicación de consola permite a los usuarios gestionar una colección de lib
 5. [Características](#características)
 6. [Contribución](#contribución)
 7. [Autores y Agradecimientos](#autores-y-agradecimientos)
-8. [Licencia](#licencia)
+8. [Diagrama UML](#diagrama-UML)
 9. [Contacto](#contacto)
 
 ## Funcionalidades
@@ -116,7 +116,9 @@ Aron Cosmo  ![]( icons8-linkedin-48.png "Logo linkedIn")
 
 
 
-## Licencia
+## Diagrama UML
+![image](https://github.com/user-attachments/assets/404e6bd2-3e19-451e-a217-1f8d6852d82b)
+
 
 
 
