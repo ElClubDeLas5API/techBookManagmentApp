@@ -25,7 +25,7 @@ public class MySQLBookRepository implements BookRepository {
     }
 
     @Override
-    public List<Book> findAll() throws SQLException {
+    public List<Book> findAll() {
         String sql = "SELECT * FROM books";
         List<Book> bookList = new ArrayList<>();
         try {
@@ -52,7 +52,7 @@ public class MySQLBookRepository implements BookRepository {
     }
 
     @Override
-    public Optional <Book> findByIsbn(String userISBN) throws SQLException {
+    public Optional <Book> findByIsbn(String userISBN) {
         String sql = "SELECT * FROM books WHERE isbn = '%s'" .formatted(userISBN);
         Book book = null;
 
@@ -82,7 +82,7 @@ public class MySQLBookRepository implements BookRepository {
 
     }
     @Override
-    public void deleteByIsbn(String userISBN) throws SQLException{
+    public void deleteByIsbn(String userISBN) {
         String sql = "DELETE FROM books WHERE isbn = '%s'" .formatted(userISBN);
         Book book = null;
 

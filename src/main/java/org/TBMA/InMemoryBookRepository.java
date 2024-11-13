@@ -1,6 +1,5 @@
 package org.TBMA;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -15,12 +14,12 @@ public class InMemoryBookRepository implements BookRepository {
     }
 
     @Override
-    public List<Book> findAll() throws SQLException {
+    public List<Book> findAll() {
         return booksDB;
     }
 
     @Override
-    public Optional<Book> findByIsbn(String userISBN) throws SQLException {
+    public Optional<Book> findByIsbn(String userISBN) {
         //buscarlo
         //si esta devolverlo como optional
         //sino esta un optional empty
@@ -28,7 +27,7 @@ public class InMemoryBookRepository implements BookRepository {
     }
 
     @Override
-    public void deleteByIsbn(String userISBN) throws SQLException {
+    public void deleteByIsbn(String userISBN) {
         booksDB.removeIf(book -> book.getIsbn().equals(userISBN));
     }
 }
