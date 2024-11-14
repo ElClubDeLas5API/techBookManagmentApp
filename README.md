@@ -35,11 +35,10 @@ La aplicación de consola permite a los usuarios gestionar una colección de lib
 
 ## Funcionalidades
 
-Funcionalidades
-[x] Ver todos los libros: Presenta una lista con los libros en la colección.
-[x] Añadir un nuevo libro: Permite introducir un nuevo libro con título, autor e ISBN (una letra seguida de tres números).
-[x] Eliminar un libro: Elimina un libro de la colección al ingresar su ISBN.
-[x] Salir de la aplicación: Termina la ejecución del programa.
+- [x]  Ver todos los libros: Presenta una lista con los libros en la colección.  
+- [x] Añadir un nuevo libro: Permite introducir un nuevo libro con título, autor e ISBN (una letra seguida de tres números).  
+- [x] Eliminar un libro: Elimina un libro de la colección al ingresar su ISBN.  
+- [x] Salir de la aplicación: Termina la ejecución del programa.  
 
 ## Tecnologías Utilizadas
 
