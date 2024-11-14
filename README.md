@@ -23,21 +23,38 @@ La aplicación de consola permite a los usuarios gestionar una colección de lib
 ## Tabla de Contenidos
 
 1. [Funcionalidades](#funcionalidades)
-2. [Estructura del Proyecto](#estructura-del-proyecto)
-3. [Instalación](#instalación)
-4. [Uso](#uso)
-5. [Características](#características)
-6. [Contribución](#contribución)
-7. [Autores y Agradecimientos](#autores-y-agradecimientos)
-8. [Diagrama UML](#diagrama-UML)
-9. [Contacto](#contacto)
+2. [Tecnologías utilizadas](#tecnologias-utilizadas)
+3. [Estructura del Proyecto](#estructura-del-proyecto)
+4. [Instalación](#instalación)
+5. [Uso](#uso)
+6. [Características](#características)
+7. [Contribución](#contribución)
+8. [Autores y Agradecimientos](#autores-y-agradecimientos)
+9. [Diagrama UML](#diagrama-UML)
+10. [Contacto](#contacto)
 
 ## Funcionalidades
 
-1. **Ver todos los libros**: Presenta una lista con los libros en la colección.
-2. **Añadir un nuevo libro**: Permite introducir un nuevo libro con título, autor e ISBN (una letra seguida de tres números).
-3. **Eliminar un libro**: Elimina un libro de la colección al ingresar su ISBN.
-4. **Salir de la aplicación**: Termina la ejecución del programa.
+Funcionalidades
+[x] Ver todos los libros: Presenta una lista con los libros en la colección.
+[x] Añadir un nuevo libro: Permite introducir un nuevo libro con título, autor e ISBN (una letra seguida de tres números).
+[x] Eliminar un libro: Elimina un libro de la colección al ingresar su ISBN.
+[x] Salir de la aplicación: Termina la ejecución del programa.
+
+## Tecnologías Utilizadas
+
+Este proyecto utiliza las siguientes tecnologías y herramientas:
+
+- **Java 21 (Corretto)**: Lenguaje de programación principal.
+- **JUnit 5**: Framework para la implementación de tests unitarios.
+- **Maven**: Sistema de gestión de dependencias y compilación.
+- **MySQL**: Base de datos relacional (opcional en el caso de una versión con persistencia).
+- **Git**: Control de versiones para la gestión de cambios en el código.
+- **IntelliJ IDEA / Eclipse**: IDEs recomendados para desarrollo en Java.
+- **draw.io**: Herramienta para crear diagramas UML.
+
+> Nota: Este proyecto está diseñado para ser ejecutado en una interfaz de consola, pero puede integrarse con Spring para una estructura más avanzada o persistencia en base de datos.
+
 
 ## Estructura del Proyecto
 
@@ -46,7 +63,7 @@ El proyecto está compuesto por tres archivos principales:
 - **Main.java**: Punto de entrada de la aplicación. Inicializa el sistema y llama al método para mostrar el menú interactivo.
 - **Application.java**: Contiene la lógica principal de la aplicación, incluyendo el menú, los métodos de añadir, eliminar y ver libros, y validaciones de entrada del usuario.
 - **Book.java**: Define la estructura de un libro con los atributos título, autor e ISBN.
-
+- **Tests**: Se han implementado pruebas unitarias básicas para verificar el funcionamiento de los métodos en el repositorio de libros. 
 ---
 
 ## Instalación
@@ -117,7 +134,8 @@ Aron Cosmo  ![]( icons8-linkedin-48.png "Logo linkedIn")
 
 
 ## Diagrama UML
-![image](https://github.com/user-attachments/assets/404e6bd2-3e19-451e-a217-1f8d6852d82b)
+
+![UML drawio](https://github.com/user-attachments/assets/68f4b7dd-e3cd-49c3-a67e-cd2df8e528fd)
 
 
 
