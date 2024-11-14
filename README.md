@@ -117,7 +117,8 @@ Aron Cosmo  ![]( icons8-linkedin-48.png "Logo linkedIn")
 
 
 ## Diagrama UML
-![image](https://github.com/user-attachments/assets/404e6bd2-3e19-451e-a217-1f8d6852d82b)
+
+![UML drawio](https://github.com/user-attachments/assets/68f4b7dd-e3cd-49c3-a67e-cd2df8e528fd)
 
 
 
