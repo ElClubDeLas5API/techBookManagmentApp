@@ -23,9 +23,6 @@ public class InMemoryBookRepository implements BookRepository {
 
     @Override
     public Optional<Book> findByIsbn(String userISBN) {
-        //buscarlo
-        //si esta devolverlo como optional
-        //sino esta un optional empty
         return Optional.empty();
     }
 
