@@ -23,15 +23,14 @@ La aplicación de consola permite a los usuarios gestionar una colección de lib
 ## Tabla de Contenidos
 
 1. [Funcionalidades](#funcionalidades)
-2. [Tecnologías utilizadas](#tecnologias-utilizadas)
+2. [Tecnologías Utilizadas](#tecnologías-utilizadas)
 3. [Estructura del Proyecto](#estructura-del-proyecto)
 4. [Instalación](#instalación)
 5. [Uso](#uso)
 6. [Características](#características)
-7. [Contribución](#contribución)
-8. [Autores y Agradecimientos](#autores-y-agradecimientos)
-9. [Diagrama UML](#diagrama-UML)
-10. [Contacto](#contacto)
+7. [Autores y Agradecimientos](#autores-y-agradecimientos)
+8. [Diagrama UML](#diagrama-uml)
+
 
 ## Funcionalidades
 
@@ -115,30 +114,20 @@ Ha elegido:
 - **Mensajes informativos**: 
   - Informa al usuario sobre el éxito de las operaciones realizadas y muestra mensajes claros en caso de errores.
 
-## Contribución
 
+### Autores y Agradecimientos
 
-
-## Autores y Agradecimientos
-
-Paula Calvo ![https://www.linkedin.com/in/paulacalvogarcia2001/]( icons8-linkedin-48.png "Logo linkedIn")
-Carla Sanchez ![https://www.linkedin.com/in/carla-sanchez24]( icons8-linkedin-48.png "Logo linkedIn")
-
-Miguel Reyes ![https://www.linkedin.com/in/miguelreyesvasquez/]( icons8-linkedin-48.png "Logo linkedIn")
-Luis Aranguren ![https://github.com/luisarangurnn]( icons8-linkedin-48.png "Logo linkedIn")
-
-Aron Cosmo  ![]( icons8-linkedin-48.png "Logo linkedIn")
-
-
+- Paula Calvo [![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)](https://www.linkedin.com/in/paulacalvogarcia2001/)
+- Carla Sanchez [![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)](https://www.linkedin.com/in/carla-sanchez24)
+- Miguel Reyes [![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)](https://www.linkedin.com/in/miguelreyesvasquez/)
+- Luis Aranguren [![GitHub](https://img.icons8.com/color/48/000000/github.png)](https://github.com/luisarangurnn)
+- Aron Cosmo [![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)](https://www.linkedin.com/)
 
 
 ## Diagrama UML
 
-![UML drawio](https://github.com/user-attachments/assets/68f4b7dd-e3cd-49c3-a67e-cd2df8e528fd)
+![UMLfinal drawio](https://github.com/user-attachments/assets/b87d9671-e066-4bee-ad48-eb6264c71e73)
 
 
-
-
-## Contacto
 
 

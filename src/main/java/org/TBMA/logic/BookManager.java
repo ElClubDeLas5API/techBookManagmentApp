@@ -1,4 +1,4 @@
-package org.TBMA;
+package org.TBMA.logic;
 
 import java.sql.SQLException;
 import java.util.List;

@@ -1,4 +1,7 @@
-package org.TBMA;
+package org.TBMA.persistence;
+
+import org.TBMA.logic.Book;
+import org.TBMA.logic.BookRepository;
 
 import java.util.ArrayList;
 import java.util.List;
