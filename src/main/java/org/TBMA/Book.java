@@ -26,7 +26,7 @@ public class Book {
         return isbn;
     }
 
-    public Object getAuthor() {
+    public String getAuthor() {
         return author;
     }
 }
