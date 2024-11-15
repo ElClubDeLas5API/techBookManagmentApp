@@ -23,13 +23,13 @@ La aplicación de consola permite a los usuarios gestionar una colección de lib
 ## Tabla de Contenidos
 
 1. [Funcionalidades](#funcionalidades)
-2. [Tecnologías utilizadas](#tecnologias-utilizadas)
+2. [Tecnologías Utilizadas](#tecnologías-utilizadas)
 3. [Estructura del Proyecto](#estructura-del-proyecto)
 4. [Instalación](#instalación)
 5. [Uso](#uso)
 6. [Características](#características)
 7. [Autores y Agradecimientos](#autores-y-agradecimientos)
-8. [Diagrama UML](#diagrama-UML)
+8. [Diagrama UML](#diagrama-uml)
 
 
 ## Funcionalidades
@@ -117,11 +117,11 @@ Ha elegido:
 
 ### Autores y Agradecimientos
 
-- Paula Calvo [![LinkedIn](icons8-linkedin-48.png)](https://www.linkedin.com/in/paulacalvogarcia2001/)
-- Carla Sanchez [![LinkedIn](icons8-linkedin-48.png)](https://www.linkedin.com/in/carla-sanchez24)
-- Miguel Reyes [![LinkedIn](icons8-linkedin-48.png)](https://www.linkedin.com/in/miguelreyesvasquez/)
-- Luis Aranguren [![GitHub](icons8-linkedin-48.png)](https://github.com/luisarangurnn)
-- Aron Cosmo [![LinkedIn](icons8-linkedin-48.png)](https://www.linkedin.com/)
+- Paula Calvo [![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)](https://www.linkedin.com/in/paulacalvogarcia2001/)
+- Carla Sanchez [![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)](https://www.linkedin.com/in/carla-sanchez24)
+- Miguel Reyes [![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)](https://www.linkedin.com/in/miguelreyesvasquez/)
+- Luis Aranguren [![GitHub](https://img.icons8.com/color/48/000000/github.png)](https://github.com/luisarangurnn)
+- Aron Cosmo [![LinkedIn](https://img.icons8.com/color/48/000000/linkedin.png)](https://www.linkedin.com/)
 
 
 ## Diagrama UML
