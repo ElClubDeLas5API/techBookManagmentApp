@@ -1,4 +1,8 @@
-package org.TBMA;
+package org.TBMA.persistence;
+
+import org.TBMA.config.MySQLConnection;
+import org.TBMA.logic.Book;
+import org.TBMA.logic.BookRepository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -72,9 +76,9 @@ public class MySQLBookRepository implements BookRepository {
 
             if (res.next()) {
 
-                String title = res.getNString("title");
-                String author = res.getNString("author");
-                String isbn = res.getNString("isbn");
+                String title = res.getString("title");
+                String author = res.getString("author");
+                String isbn = res.getString("isbn");
 
                 book = new Book(title, author, isbn);
                 return Optional.of(book);

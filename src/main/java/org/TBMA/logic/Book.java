@@ -1,4 +1,4 @@
-package org.TBMA;
+package org.TBMA.logic;
 
 public class Book {
 

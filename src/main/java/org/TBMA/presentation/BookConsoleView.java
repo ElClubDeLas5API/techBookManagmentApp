@@ -1,4 +1,10 @@
-package org.TBMA;
+package org.TBMA.presentation;
+
+import org.TBMA.logic.Book;
+import org.TBMA.logic.BookManager;
+import org.TBMA.logic.BookRepository;
+import org.TBMA.persistence.InMemoryBookRepository;
+import org.TBMA.persistence.MySQLBookRepository;
 
 import java.sql.SQLException;
 import java.util.Scanner;

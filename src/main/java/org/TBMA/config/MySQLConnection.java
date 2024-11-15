@@ -1,4 +1,4 @@
-package org.TBMA;
+package org.TBMA.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,6 +1,6 @@
-import org.TBMA.Book;
-import org.TBMA.BookRepository;
-import org.TBMA.InMemoryBookRepository;
+import org.TBMA.logic.Book;
+import org.TBMA.logic.BookRepository;
+import org.TBMA.persistence.InMemoryBookRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.testng.annotations.Test;
