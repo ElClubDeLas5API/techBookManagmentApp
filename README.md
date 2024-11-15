@@ -28,10 +28,9 @@ La aplicación de consola permite a los usuarios gestionar una colección de lib
 4. [Instalación](#instalación)
 5. [Uso](#uso)
 6. [Características](#características)
-7. [Contribución](#contribución)
-8. [Autores y Agradecimientos](#autores-y-agradecimientos)
-9. [Diagrama UML](#diagrama-UML)
-10. [Contacto](#contacto)
+7. [Autores y Agradecimientos](#autores-y-agradecimientos)
+8. [Diagrama UML](#diagrama-UML)
+
 
 ## Funcionalidades
 
@@ -115,21 +114,14 @@ Ha elegido:
 - **Mensajes informativos**: 
   - Informa al usuario sobre el éxito de las operaciones realizadas y muestra mensajes claros en caso de errores.
 
-## Contribución
 
+### Autores y Agradecimientos
 
-
-## Autores y Agradecimientos
-
-Paula Calvo ![https://www.linkedin.com/in/paulacalvogarcia2001/]( icons8-linkedin-48.png "Logo linkedIn")
-Carla Sanchez ![https://www.linkedin.com/in/carla-sanchez24]( icons8-linkedin-48.png "Logo linkedIn")
-
-Miguel Reyes ![https://www.linkedin.com/in/miguelreyesvasquez/]( icons8-linkedin-48.png "Logo linkedIn")
-Luis Aranguren ![https://github.com/luisarangurnn]( icons8-linkedin-48.png "Logo linkedIn")
-
-Aron Cosmo  ![]( icons8-linkedin-48.png "Logo linkedIn")
-
-
+- Paula Calvo [![LinkedIn](icons8-linkedin-48.png)](https://www.linkedin.com/in/paulacalvogarcia2001/)
+- Carla Sanchez [![LinkedIn](icons8-linkedin-48.png)](https://www.linkedin.com/in/carla-sanchez24)
+- Miguel Reyes [![LinkedIn](icons8-linkedin-48.png)](https://www.linkedin.com/in/miguelreyesvasquez/)
+- Luis Aranguren [![GitHub](icons8-linkedin-48.png)](https://github.com/luisarangurnn)
+- Aron Cosmo [![LinkedIn](icons8-linkedin-48.png)](https://www.linkedin.com/)
 
 
 ## Diagrama UML
@@ -137,6 +129,5 @@ Aron Cosmo  ![]( icons8-linkedin-48.png "Logo linkedIn")
 ![UMLfinal drawio](https://github.com/user-attachments/assets/b87d9671-e066-4bee-ad48-eb6264c71e73)
 
 
-## Contacto
 
 
