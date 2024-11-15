@@ -83,8 +83,6 @@ public class BookConsoleView {
         }
     }
 
-
-
     private void printList() throws SQLException {
         if (bookManager.getAllBooks().isEmpty()) {
             System.out.println("No hay libros guardados");
